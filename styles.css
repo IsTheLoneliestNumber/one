@@ -18,39 +18,6 @@ main {
     animation: fadeInUp 0.8s ease-in-out;
 }
 
-.fade-in {
-    opacity: 0; /* Initially hidden */
-    animation: fadeInUp 1s ease-in-out forwards; /* Increased duration */
-}
-
-.image1 {
-    animation-delay: 0s; /* No delay */
-}
-
-.image2 {
-    animation-delay: 0.2s; /* Slight delay */
-}
-
-.image3 {
-    animation-delay: 0.4s; /* Moderate delay */
-}
-
-.image4 {
-    animation-delay: 0.6s; /* More delay */
-}
-
-/* Keyframes to define the animation */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0; /* Start as invisible */
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1; /* End as visible */
-        transform: translateY(0);
-    }
-}
-
 a {
     display: flex;
     justify-content: center;
@@ -71,6 +38,7 @@ img {
     max-width: 60%;
     height: auto;
     transform: translateY(0px);
+    transition: transform 0.3s ease; /* Smooth transition for scaling effect */
 }
 
 .progress-img {
@@ -91,8 +59,21 @@ img {
     height: auto;
 }
 
+/* Restore hover effect for logos */
 .logos a:hover img {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Enlarge on hover */
+}
+
+/* Keyframes for animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0; /* Start as invisible */
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1; /* End as visible */
+        transform: translateY(0);
+    }
 }
 
 /* Media Queries for Mobile Devices */
