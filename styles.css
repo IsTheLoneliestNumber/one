@@ -15,6 +15,40 @@ main {
     height: 100%;
     flex-direction: column;
     box-sizing: border-box;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.fade-in {
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1s ease-in-out forwards; /* Increased duration */
+}
+
+.image1 {
+    animation-delay: 0s; /* No delay */
+}
+
+.image2 {
+    animation-delay: 0.2s; /* Slight delay */
+}
+
+.image3 {
+    animation-delay: 0.4s; /* Moderate delay */
+}
+
+.image4 {
+    animation-delay: 0.6s; /* More delay */
+}
+
+/* Keyframes to define the animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0; /* Start as invisible */
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1; /* End as visible */
+        transform: translateY(0);
+    }
 }
 
 a {
