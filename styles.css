@@ -1,0 +1,95 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 50% 50%, #3d0060, #2b0037 50%, #130033 80%, #0a001e);
+    color: #e0e0e0;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 60px;
+    position: relative;
+    text-decoration: none;
+    margin: 0 100px;
+    padding: 5px;
+}
+
+a:hover {
+    border-color: #ffffff;
+}
+
+img {
+    max-width: 60%;
+    height: auto;
+    transform: translateY(0px);
+}
+
+.progress-img {
+    max-width: 30%;
+    height: auto;
+    margin-top: -40px;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.logos img {
+    max-width: 200%;
+    height: auto;
+}
+
+.logos a:hover img {
+    transform: scale(1.05);
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    img {
+        max-width: 80%; /* Allow images to take up more space */
+    }
+
+    .progress-img {
+        max-width: 60%; /* Increase size for progress image */
+        margin-top: -20px; /* Adjust margin as needed */
+    }
+
+    a {
+        margin: 0 20px; /* Reduce margin for logos */
+        width: 60px; /* Adjust size for mobile */
+        height: 50px;
+    }
+
+    .logos {
+        flex-direction: column; /* Stack logos vertically */
+        margin-top: 30px;
+    }
+
+    .logos img {
+        max-width: 100%; /* Ensure logos fit within the screen */
+        height: auto;
+        margin-bottom: 10px; /* Space between logos */
+    }
+}
