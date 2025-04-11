@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle at 50% 50%, #3d0060, #2b0037 50%, #130033 80%, #0a001e);
+    background: radial-gradient(circle at 50% 50%, #0b0c10, #0a0a0f 40%, #08080d 70%, #07080b);
     color: #e0e0e0;
     height: 100vh;
 }
