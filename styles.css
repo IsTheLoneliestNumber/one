@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -47,4 +48,138 @@ body {
         background-size: 4px 4px;
         pointer-events: none;
         opacity: 0.3;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        box-sizing: border-box;
+        animation: fadeInUp 0.8s ease-in-out;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 60px;
+        position: relative;
+        text-decoration: none;
+        margin: 0 50px;
+        padding: 5px;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        filter: drop-shadow(0 0 20px rgba(255, 100, 150, 0.6));
+    }
+
+    img {
+        max-width: 60%;
+        height: auto;
+        transform: translateY(0px);
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    .progress-img {
+        max-width: 30%;
+        height: auto;
+        margin-top: -40px;
+    }
+
+    .logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .logos img {
+        max-width: 200%;
+        height: auto;
+    }
+
+    /* Restore hover effect for logos */
+    .logos a:hover img {
+        transform: scale(1.1) translateY(-5px);
+    }
+
+    /* Keyframes for animations */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes glowPulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.6;
+        }
+    }
+
+    /* Media Queries for Mobile Devices */
+    @media (max-width: 768px) {
+        main {
+            flex-direction: column;
+            padding: 15px;
+        }
+
+        img {
+            max-width: 80%;
+        }
+
+        .progress-img {
+            max-width: 60%;
+            margin-top: -20px;
+        }
+
+        a {
+            margin: 0 15px;
+            width: 60px;
+            height: 50px;
+        }
+
+        .logos {
+            flex-direction: column;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .logos img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .logos a {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        a {
+            margin: 0 10px;
+            width: 50px;
+            height: 40px;
+        }
+
+        .logos {
+            gap: 10px;
+        }
     }
