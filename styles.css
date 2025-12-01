@@ -1,39 +1,40 @@
-/* Base Styles */
 body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background: linear-gradient(135deg, 
-            #1a0a3e 0%, 
-            #2d1b5e 15%, 
-            #4a2d7e 30%, 
-            #6b3f9e 45%, 
-            #2d1b5e 60%, 
-            #1a0a3e 80%, 
-            #0a0520 100%);
+        background: radial-gradient(ellipse at center, 
+            #1a3a5c 0%, 
+            #0f2847 25%, 
+            #0a1f3d 50%, 
+            #051528 75%, 
+            #020b16 100%);
         color: #e0e0e0;
         min-height: 100vh;
         position: relative;
         overflow-x: hidden;
     }
 
-    /* Animated cityscape effect */
+    /* Central glowing effect */
     body::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(ellipse at 20% 30%, rgba(255, 0, 100, 0.15) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 60%, rgba(0, 150, 255, 0.15) 0%, transparent 50%),
-            radial-gradient(ellipse at 50% 80%, rgba(150, 0, 255, 0.1) 0%, transparent 60%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, 
+            rgba(100, 180, 255, 0.3) 0%, 
+            rgba(60, 140, 220, 0.15) 30%, 
+            rgba(30, 100, 180, 0.05) 50%, 
+            transparent 70%);
         animation: glowPulse 8s ease-in-out infinite;
         pointer-events: none;
+        border-radius: 50%;
+        filter: blur(60px);
     }
 
-    /* Comic book dots effect */
+    /* Subtle texture overlay */
     body::after {
         content: '';
         position: absolute;
@@ -42,142 +43,8 @@ body {
         right: 0;
         bottom: 0;
         background-image: 
-            radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
         background-size: 4px 4px;
         pointer-events: none;
-        opacity: 0.5;
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        flex-direction: column;
-        box-sizing: border-box;
-        animation: fadeInUp 0.8s ease-in-out;
-        position: relative;
-        z-index: 1;
-        padding: 20px;
-    }
-
-    a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80px;
-        height: 60px;
-        position: relative;
-        text-decoration: none;
-        margin: 0 50px;
-        padding: 5px;
-        transition: all 0.3s ease;
-    }
-
-    a:hover {
-        filter: drop-shadow(0 0 20px rgba(255, 100, 150, 0.6));
-    }
-
-    img {
-        max-width: 60%;
-        height: auto;
-        transform: translateY(0px);
-        transition: transform 0.3s ease;
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-    }
-
-    .progress-img {
-        max-width: 30%;
-        height: auto;
-        margin-top: -40px;
-    }
-
-    .logos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .logos img {
-        max-width: 200%;
-        height: auto;
-    }
-
-    /* Restore hover effect for logos */
-    .logos a:hover img {
-        transform: scale(1.1) translateY(-5px);
-    }
-
-    /* Keyframes for animations */
-    @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes glowPulse {
-        0%, 100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.6;
-        }
-    }
-
-    /* Media Queries for Mobile Devices */
-    @media (max-width: 768px) {
-        main {
-            flex-direction: column;
-            padding: 15px;
-        }
-
-        img {
-            max-width: 80%;
-        }
-
-        .progress-img {
-            max-width: 60%;
-            margin-top: -20px;
-        }
-
-        a {
-            margin: 0 15px;
-            width: 60px;
-            height: 50px;
-        }
-
-        .logos {
-            flex-direction: column;
-            margin-top: 30px;
-            gap: 15px;
-        }
-
-        .logos img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .logos a {
-            margin: 0;
-        }
-    }
-
-    @media (max-width: 480px) {
-        a {
-            margin: 0 10px;
-            width: 50px;
-            height: 40px;
-        }
-
-        .logos {
-            gap: 10px;
-        }
+        opacity: 0.3;
     }
